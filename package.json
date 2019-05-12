@@ -1,0 +1,41 @@
+{
+  "name": "thronewar",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.4",
+    "debug": "~2.6.9",
+    "express": "^4.16.4",
+    "http-errors": "^1.7.2",
+    "jade": "^1.11.0",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.1",
+    "@types/express": "^4.16.1",
+    "@types/http-errors": "^1.6.1",
+    "@types/jade": "0.0.30",
+    "@types/morgan": "^1.7.35"
+  },
+  "description": "This is the website that will be used for discussion and debates",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GameFreak527/ThroneWar.git"
+  },
+  "keywords": [
+    "Throne",
+    "War",
+    "One",
+    "Piece"
+  ],
+  "author": "Shiv Rana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GameFreak527/ThroneWar/issues"
+  },
+  "homepage": "https://github.com/GameFreak527/ThroneWar#readme"
+}

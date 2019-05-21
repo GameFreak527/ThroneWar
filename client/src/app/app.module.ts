@@ -15,6 +15,7 @@ import { FooterComponent } from './partials/footer/footer.component';
 import { DiscussionComponent } from './pages/discussion/discussion.component';
 import { LoginComponent } from './pages/auth/login/login.component';
 import { RegistrationComponent } from './pages/auth/registration/registration.component';
+import { BattlegroundComponent } from './pages/debate/battleground/battleground.component';
 
 // Route Guards
 export function jwtTokenGetter() {
@@ -32,6 +33,7 @@ import {
   JwtInterceptor
 } from "@auth0/angular-jwt";
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +43,8 @@ import {
     FooterComponent,
     DiscussionComponent,
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    BattlegroundComponent,
   ],
   
   imports: [

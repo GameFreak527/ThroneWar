@@ -1,5 +1,24 @@
 <div class="jumbotron">
-    <h1 class="display-4"></h1>
+    <h1 class="display-4">{{title}}</h1>
     <p class="lead">All the information of anything related to latest news will be posted here</p>
     <hr class="my-4">
+
+    <!--For register user to update news-->
+    <div class="column col-6" *ngIf="isLoggedIn()">
+      <label>Title</label>
+      <input type="text" class="form-control" placeholder="Title"  [(ngModel)]="news.title">
+
+      <label>Content</label>
+        <textarea class="form-control" placeholder="Content" rows="10" [(ngModel)]="news.content"></textarea>
+
+        <button class="btn btn-outline-success" type="button" (click)="onSaveClick()">Save</button>
+        <button class="btn btn-outline-warning" type="button" (click)="onClearClick()">Clear</button>
+    </div>
+
+    <!--For viewers only-->
+    <div class="column col-6">
+        <h1><span class="badge badge-secondary">{{news.title}}</span></h1>
+        <h3><p>{{news.content}}</p></h3>
+
+    </div>
   </div>

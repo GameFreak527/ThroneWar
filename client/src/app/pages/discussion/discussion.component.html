@@ -1,3 +1,34 @@
-<p>
-  discussion works!
-</p>
+<div class="jumbotron">
+    <h1 class="display-4">{{title}}</h1>
+    <p class="lead">This is the place where you can discuss anything related to One Piece</p>
+    <hr class="my-4">
+    <div>
+        <a class="btn btn-primary" routerLink="/thread" role="button" *ngIf="isLoggedIn()">
+          <i class="fas fa-plus-circle"></i> Add Topic</a>
+
+          <table class="table table-bordered table-striped table-hover">
+              <!-- Header Row-->
+              <tr>
+                  <th class="text-center">User</th>
+                  <th class="text-center">Topic</th>
+                  <th class="text-center">Replies</th>
+                  <th class="text-center"></th>
+                  <th class="text-center"></th>
+              </tr>
+
+              <!-- Repeatable Template Row -->
+                  <tr *ngFor="let Thread of thread">
+                      <td class="text-center">{{ Thread.userName }}</td>
+                      <td class="text-center"><a routerLink="/"
+                        class="btn btn-primary"> {{Thread.title}}</a></td>
+                      <td class="text-center">{{ Thread.replies }}</td>
+                      <!--
+                      <td class="text-center">
+                              <a routerLink="/contact/contact-list/delete/{{ contact._id }}" (click)="onDeleteClick()"
+                                  class="btn btn-danger"><i class="fas fa-trash-alt"></i> Delete</a>
+                              </td>
+                              -->
+                  </tr>
+          </table>
+    </div>
+  </div>

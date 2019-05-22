@@ -32,6 +32,8 @@ import {
   JwtHelperService,
   JwtInterceptor
 } from "@auth0/angular-jwt";
+import { ProfileComponent } from './pages/auth/profile/profile.component';
+import { AddThreadComponent } from './pages/discussion/add-thread/add-thread.component';
 
 
 @NgModule({
@@ -45,6 +47,8 @@ import {
     LoginComponent,
     RegistrationComponent,
     BattlegroundComponent,
+    ProfileComponent,
+    AddThreadComponent,
   ],
   
   imports: [

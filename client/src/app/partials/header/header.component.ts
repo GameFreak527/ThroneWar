@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   user: User;
+  userId:string;
 
   constructor(
     private flashMessage: FlashMessagesService,
@@ -20,6 +21,9 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.user = new User();
+    if(this.isLoggedIn()){
+      this.userId = (JSON.parse(localStorage.getItem('user'))["id"]);
+    }
   }
 
   onLogoutClick(): void {

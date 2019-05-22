@@ -3,7 +3,7 @@
     <p class="lead">This is the place where you can discuss anything related to One Piece</p>
     <hr class="my-4">
     <div>
-        <a class="btn btn-primary" routerLink="/thread" role="button" *ngIf="isLoggedIn()">
+        <a class="btn btn-primary" routerLink="/addthread" role="button" *ngIf="isLoggedIn()">
           <i class="fas fa-plus-circle"></i> Add Topic</a>
 
           <table class="table table-bordered table-striped table-hover">
@@ -19,8 +19,8 @@
               <!-- Repeatable Template Row -->
                   <tr *ngFor="let Thread of thread">
                       <td class="text-center">{{ Thread.userName }}</td>
-                      <td class="text-center"><a routerLink="/"
-                        class="btn btn-primary"> {{Thread.title}}</a></td>
+                      <td class="text-center"><a routerLink="/thread/{{Thread._id}}"
+                       > {{Thread.title}}</a></td>
                       <td class="text-center">{{ Thread.replies }}</td>
                       <!--
                       <td class="text-center">

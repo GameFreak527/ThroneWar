@@ -9,18 +9,81 @@ let DB = require('../config/db');
 let userModel = require("../models/user");
 let User = userModel.User; // alias
 
-module.exports.getAllUsers = (req,res,next) =>{
-    User.find((err, userList) => {
+//define the character model
+let characterModel = require("../models/character");
+
+//Getting the list of all the characters registered
+module.exports.getallCharacters = (req,res,next) =>{
+  characterModel.find((err, characterList) => {
         if (err) {
           console.log(err);
           return console.error(err);
         } else {
           res.json({
             success: true,
-            userList: userList
+            characterList: characterList
           });
         }
       });
+}
+
+//Get specific user
+module.exports.getSpecificUser = (req,res,next)=>{
+  let id = req.params.id;
+
+  userModel.findById(id, (err, userObject) => {
+    if (err) {
+      console.log(err);
+      res.end(err);
+    } else {
+      res.json({
+        success: true,
+        msg: "Successfully Displayed User",
+        user: userObject
+      });
+    }
+  });
+};
+
+//Adding character with the database
+module.exports.addCharacter =(req,res,next) =>{
+  let newCharacter = characterModel({
+    userID : req.body.userID,
+    userName: req.body.userName,
+    affiliation: req.body.affiliation,
+    rank: req.body.rank,
+    bounty: req.body.bounty,
+    group: req.body.group
+  });
+
+  characterModel.create(newCharacter, (err, characterModel) => {
+    if (err) {
+      console.log(err);
+      res.end(err);
+    } else {
+      res.json({
+        success: true,
+        msg: "Successfully Added New Character"
+      });
+    }
+  });
+};
+
+//get specific character
+module.exports.getSpecificCharacter = (req,res,next) =>{
+  let id = req.params.id;
+  characterModel.find({
+    'user_Id': id
+  }, (err, characterObject) => {
+    if (err) {
+      return console.error(err);
+    } else {
+      res.json({
+        success: true,
+        character: characterObject
+      });
+    }
+  });
 }
 
 module.exports.processLoginPage = (req, res, next) => {

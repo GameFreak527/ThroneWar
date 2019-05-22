@@ -10,9 +10,8 @@ import { UserService } from 'src/app/services/user.service';
 export class HomeComponent implements OnInit {
   
   
-  constructor(private userService : UserService) { 
-    console.log("This is it");
-    this.userService.getUsersList().subscribe(data=>{
+  constructor(private userService : UserService) {
+    this.userService.getCharacterList().subscribe(data=>{
       if(data.success){
         console.log(data);
       }

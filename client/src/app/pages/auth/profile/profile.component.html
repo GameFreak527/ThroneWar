@@ -1,0 +1,53 @@
+<div class="jumbotron">
+        <h1 class="display-4">{{title}}</h1>
+        <p class="lead">This is where all the information of user and character will be display</p>
+        <hr class="my-4">
+
+        <div class="container">
+            <!--User Profile-->
+                <div class="row">
+                    <div class="col-md-6 ">
+                            <table class="table">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col">User Name</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Display Name</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>{{user.username}}</td>
+                                        <td>{{user.email}}</td>
+                                        <td>{{user.displayName}}</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                    </div>
+                    <!--Character Profile-->
+                    <div class="col-md-6 ">
+                            <table class="table">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col">User Name</th>
+                                        <th scope="col">Affilation</th>
+                                        <th scope="col"*ngIf="character.rank !=null">Rank</th>
+                                        <th scope="col"*ngIf="character.bounty !=null">Bounty</th>
+                                        <th scope="col">Group</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>{{character.userName}}</td>
+                                        <td>{{character.affilation}}</td>
+                                        <td>{{character.rank}}</td>
+                                        <td>{{character.bounty}}</td>
+                                        <td>{{character.group}}</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                    </div>
+                </div>
+            </div>
+</div>
+

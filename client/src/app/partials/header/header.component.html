@@ -20,8 +20,8 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="battleground">Battle Ground</a>
       </li>
-      <li *ngIf="isLoggedIn()" class="navbar-text ml-4 mr-3 d-none d-lg-inline text-black"><i class="fas fa-lg fa-user"></i>
-        Welcome, {{ user.displayName }}</li>
+        <li *ngIf="isLoggedIn()" class="navbar-text ml-4 mr-3 d-none d-lg-inline text-black"> <a routerLink="/profile/{{userId}}" >
+          <i class="far fa-user-circle"></i>Welcome, {{ user.displayName }}</a></li>
 
       <li *ngIf="isLoggedIn()" class="nav-item"><a (click)="onLogoutClick()" routerLink="/logout" class="nav-link text-dark">
         <i class="fas fa-lg fa-sign-out-alt"></i> Logout</a></li>

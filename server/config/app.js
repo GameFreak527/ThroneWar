@@ -29,6 +29,7 @@ mongoDB.once("open", () => {
 
 let indexRouter = require("../routes/index");
 let userRouter = require("../routes/users");
+let discussionRouter = require("../routes/discussion");
 
 let app = express();
 
@@ -93,6 +94,7 @@ passport.use(strategy);
 
 app.use("/api", indexRouter);
 app.use("/api/user", userRouter);
+app.use("/api/discussion", discussionRouter);
 
 //Redirect/Sends to index.html page because all the pages are there
 app.get('*', (req, res) => {

@@ -6,6 +6,8 @@ import { DiscussionComponent } from './pages/discussion/discussion.component';
 import { LoginComponent } from './pages/auth/login/login.component';
 import { RegistrationComponent } from './pages/auth/registration/registration.component';
 import { BattlegroundComponent } from './pages/debate/battleground/battleground.component';
+import { ProfileComponent } from './pages/auth/profile/profile.component';
+import { AddThreadComponent } from './pages/discussion/add-thread/add-thread.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -15,6 +17,8 @@ const routes: Routes = [
   { path: "login", component: LoginComponent, data: { title: "Login" } },
   { path: "registration", component: RegistrationComponent, data: { title: "Registration" } },
   { path: "battleground", component: BattlegroundComponent, data: { title: "Battle Ground" } },
+  { path: "profile/:id", component: ProfileComponent, data: { title: "User Profile" } },
+  { path: "addthread", component: AddThreadComponent, data: { title: "Add Discussion Thread" } },
 ];
 
 @NgModule({
